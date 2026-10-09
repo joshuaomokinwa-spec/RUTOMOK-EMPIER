@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUTOMOK EMPIRE | Fashion for Women, Men & Kids</title>
+    <meta
+      name="description"
+      content="Rutomok Empire offers premium fashion for women, men and kids with curated collections, elegant essentials and a luxury boutique feel."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --black: #0b0b0b;
+        --deep: #171717;
+        --gold: #c6a15b;
+        --rich-gold: #a9823b;
+        --ivory: #f7f4ee;
+        --white: #ffffff;
+        --muted: #666666;
+        --border: rgba(11,11,11,0.1);
+        --shadow: 0 18px 40px rgba(11,11,11,0.12);
+        --max-width: 1250px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: var(--white);
+        color: var(--black);
+        line-height: 1.6;
+      }
+      a { text-decoration: none; color: inherit; }
+      img { display: block; max-width: 100%; }
+      button, input, select, textarea { font: inherit; }
+      h1,h2,h3,h4,h5 { margin: 0; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.01em; }
+      p { margin: 0; }
+      .container { width: min(var(--max-width), calc(100% - 32px)); margin: 0 auto; }
+      .section { padding: 88px 0; }
+      .section.ivory { background: var(--ivory); }
+      .section.black { background: var(--black); color: var(--white); }
+      .section.white { background: var(--white); }
+      .eyebrow {
+        display: inline-block;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 18px;
+        margin-bottom: 28px;
+      }
+      .section-head h2 {
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        line-height: 0.95;
+      }
+      .section-head .copy {
+        font-size: 0.98rem;
+        color: var(--muted);
+        max-width: 520px;
+      }
+      .section.black .section-head h2,
+      .section.black .section-head .copy,
+      .section.black .eyebrow { color: var(--white); }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        border-radius: 4px;
+        padding: 0 22px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: all 0.28s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.72rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .btn-primary { background: var(--black); color: var(--white); }
+      .btn-primary:hover { background: var(--gold); color: var(--black); border-color: var(--gold); }
+      .btn-secondary { background: var(--gold); color: var(--black); }
+      .btn-secondary:hover { background: var(--rich-gold); }
+      .btn-outline { background: transparent; color: var(--black); border-color: rgba(11,11,11,0.3); }
+      .btn-outline:hover { border-color: var(--gold); background: rgba(198,161,91,0.08); }
+      .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.45); }
+      .btn-ghost:hover { background: rgba(255,255,255,0.08); }
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 150;
+        backdrop-filter: blur(10px);
+        background: rgba(255,255,255,0.92);
+        border-bottom: 1px solid rgba(11,11,11,0.08);
+      }
+      .header-inner {
+        width: min(var(--max-width), calc(100% - 32px));
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 2.2fr 1fr;
+        align-items: center;
+        min-height: 78px;
+        gap: 18px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.74rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(198,161,91,0.7);
+        background: linear-gradient(135deg, rgba(198,161,91,0.12), rgba(198,161,91,0.02));
+        font-size: 0.7rem;
+      }
+      .brand-logo {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+        flex: 0 0 auto;
+      }
+      .footer-logo {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        margin-bottom: 16px;
+      }
+      .main-nav { display: flex; justify-content: center; align-items: center; gap: 18px; }
+      .nav-item { position: relative; }
+      .nav-item > a {
+        display: block;
+        padding: 24px 0;
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--black);
+        transition: color 0.2s ease;
+      }
+      .nav-item:hover > a, .nav-item.active > a { color: var(--rich-gold); }
+      .nav-item .menu {
+        position: absolute;
+        top: calc(100% - 3px);
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        min-width: 220px;
+        background: rgba(255,255,255,0.98);
+        border: 1px solid rgba(11,11,11,0.08);
+        box-shadow: var(--shadow);
+        padding: 14px 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.22s ease;
+      }
+      .nav-item:hover .menu, .nav-item:focus-within .menu {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+      .menu a {
+        display: block;
+        padding: 10px 16px;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--black);
+      }
+      .menu a:hover { background: rgba(198,161,91,0.08); color: var(--rich-gold); }
+      .utils { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
+      .icon-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid rgba(11,11,11,0.08);
+        background: transparent;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.25s ease;
+      }
+      .icon-btn:hover { background: rgba(198,161,91,0.08); }
+      .count {
+        position: absolute;
+        right: -4px;
+        top: -2px;
+        background: var(--gold);
+        color: var(--black);
+        font-size: 0.56rem;
+        font-weight: 700;
+        min-width: 18px;
+        height: 18px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4px;
+      }
+      .mobile-toggle { display: none; }
+      .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(360px, 85vw);
+        height: 100vh;
+        background: rgba(11,11,11,0.97);
+        color: var(--white);
+        z-index: 200;
+        padding: 24px 22px;
+        transform: translateX(100%);
+        transition: transform 0.28s ease;
+      }
+      .mobile-nav.open { transform: translateX(0); }
+      .mobile-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 180;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.25s ease;
+      }
+      .mobile-backdrop.show { opacity: 1; visibility: visible; }
+      .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+        margin-bottom: 18px;
+      }
+      .mobile-panel { display: grid; gap: 10px; }
+      .mobile-link {
+        display: block;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        color: rgba(255,255,255,0.92);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+      }
+      .hero {
+        background: linear-gradient(90deg, rgba(8,8,8,0.8), rgba(8,8,8,0.5)), url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+        min-height: 720px;
+        display: flex;
+        align-items: center;
+      }
+      .hero-inner {
+        width: min(var(--max-width), calc(100% - 32px));
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 30px;
+        align-items: center;
+        padding: 70px 0;
+      }
+      .hero-copy h1 {
+        font-size: clamp(4rem, 7vw, 7.1rem);
+        color: var(--white);
+        line-height: 0.9;
+        margin-bottom: 16px;
+      }
+      .hero-copy p {
+        max-width: 580px;
+        color: rgba(255,255,255,0.78);
+        font-size: 1.06rem;
+        margin-bottom: 26px;
+      }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 28px; }
+      .hero-stats { display: flex; gap: 30px; border-top: 1px solid rgba(255,255,255,0.18); padding-top: 18px; }
+      .stat { min-width: 110px; }
+      .stat strong {
+        display: block;
+        color: var(--gold);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2rem;
+      }
+      .stat span { color: rgba(255,255,255,0.72); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; }
+      .hero-panel {
+        justify-self: end;
+        width: min(100%, 430px);
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(198,161,91,0.5);
+        padding: 18px;
+      }
+      .hero-panel-image {
+        height: 430px;
+        background: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+        margin-bottom: 16px;
+      }
+      .hero-panel-row { display: flex; justify-content: space-between; align-items: end; gap: 16px; }
+      .hero-panel-row strong { display: block; color: var(--white); font-size: 1.2rem; }
+      .hero-panel-row span { display: block; color: rgba(255,255,255,0.7); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; }
+      .audience-grid, .category-grid, .products-grid, .social-grid, .lookbook-grid, .collections-grid, .about-grid, .contact-grid, .faq-grid, .checkout-grid, .cart-grid, .wishlist-grid, .trust-grid, .reviews-grid { display: grid; gap: 22px; }
+      .audience-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .category-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .products-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .social-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .lookbook-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .collections-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .about-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .trust-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .reviews-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .faq-grid { grid-template-columns: 1fr 1.1fr; }
+      .contact-grid { grid-template-columns: 0.9fr 1.1fr; }
+      .checkout-grid { grid-template-columns: 1.05fr 0.95fr; }
+      .cart-grid { grid-template-columns: 1.2fr 0.8fr; }
+      .wishlist-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .audience-card, .category-card, .panel-card, .lookbook-card, .social-card, .collection-card, .contact-card, .faq-box, .info-card, .checkout-box, .summary-box, .story-box, .product-card { border-radius: 12px; overflow: hidden; }
+      .audience-card, .category-card, .panel-card, .lookbook-card, .social-card, .collection-card { position: relative; min-height: 420px; background: #ddd; }
+      .audience-card { min-height: 520px; }
+      .category-card { min-height: 260px; }
+      .panel-card { min-height: 210px; }
+      .lookbook-card { min-height: 580px; }
+      .social-card { min-height: 300px; }
+      .collection-card { min-height: 480px; }
+      .card-bg, .panel-image, .lookbook-image, .social-image, .card-image { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.02); transition: transform 0.45s ease; }
+      .audience-card:hover .card-bg, .category-card:hover .card-bg, .lookbook-card:hover .lookbook-image, .social-card:hover .social-image, .collection-card:hover .card-image, .panel-card:hover .panel-image { transform: scale(1.08); }
+      .dark-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.7)); }
+      .card-content { position: absolute; left: 22px; right: 22px; bottom: 20px; z-index: 2; }
+      .card-content h3 { font-size: clamp(2.4rem, 4vw, 3.8rem); color: var(--white); margin-bottom: 18px; }
+      .category-card .card-content h3 { font-size: clamp(2.1rem, 3vw, 2.7rem); }
+      .lookbook-card .caption { position: absolute; left: 22px; right: 22px; bottom: 18px; z-index: 2; display: flex; justify-content: space-between; align-items: end; gap: 12px; color: var(--white); }
+      .lookbook-card .caption h3 { font-size: clamp(2.3rem, 3vw, 3.5rem); color: var(--white); line-height: 0.92; }
+      .badge { font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.75); }
+      .product-card { background: var(--white); border: 1px solid rgba(11,11,11,0.06); transition: transform 0.28s ease, box-shadow 0.28s ease; }
+      .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(11,11,11,0.08); }
+      .product-image-wrap { position: relative; height: 360px; overflow: hidden; background: #f1f1f1; }
+      .product-image { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.4s ease; }
+      .product-card:hover .product-image { transform: scale(1.04); }
+      .product-actions { position: absolute; top: 14px; right: 14px; display: flex; gap: 8px; }
+      .tiny-icon {
+        width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(11,11,11,0.08); background: rgba(255,255,255,0.9); display: grid; place-items: center; cursor: pointer; transition: all 0.22s ease;
+      }
+      .tiny-icon:hover { background: var(--black); color: var(--white); }
+      .product-card-body { padding: 18px 18px 20px; }
+      .meta-row { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+      .meta-tag { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); background: rgba(11,11,11,0.04); padding: 6px 8px; border-radius: 999px; }
+      .product-name { font-size: 1.02rem; font-weight: 600; line-height: 1.28; margin-bottom: 8px; }
+      .price { font-size: 1.12rem; font-weight: 700; margin-bottom: 12px; }
+      .product-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+      .mini-label { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+      .small-btn { min-height: 40px; padding: 0 14px; font-size: 0.6rem; letter-spacing: 0.12em; border-radius: 4px; background: var(--black); color: var(--white); border: 1px solid var(--black); cursor: pointer; }
+      .small-btn:hover { background: var(--gold); color: var(--black); border-color: var(--gold); }
+      .editorial { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 26px; align-items: stretch; background: var(--ivory); border-radius: 18px; overflow: hidden; }
+      .editorial-image { min-height: 620px; background: url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat; }
+      .editorial-copy { padding: 46px 34px; display: flex; flex-direction: column; justify-content: center; }
+      .editorial-copy h3 { font-size: clamp(3.2rem, 5vw, 5.6rem); line-height: 0.9; color: var(--black); margin-bottom: 18px; }
+      .editorial-copy p { font-size: 1.05rem; color: rgba(11,11,11,0.75); max-width: 420px; margin-bottom: 24px; }
+      .story-wrap { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 28px; align-items: center; }
+      .story-photo { min-height: 650px; border-radius: 12px; background: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat; }
+      .story-box { background: var(--ivory); border: 1px solid rgba(11,11,11,0.05); padding: 32px 28px; }
+      .story-box h3 { font-size: clamp(3rem, 5vw, 5rem); margin-bottom: 16px; }
+      .story-box p { color: rgba(11,11,11,0.75); margin-bottom: 18px; }
+      .trust-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .trust-item { min-height: 180px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 22px 18px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+      .trust-item .icon { font-size: 1.8rem; color: var(--gold); }
+      .trust-item h4 { font-family: 'Inter', sans-serif; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; color: var(--white); }
+      .reviews-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .review-card { background: var(--white); border: 1px solid rgba(11,11,11,0.06); padding: 22px 20px; }
+      .stars { letter-spacing: 0.25em; color: var(--gold); margin-bottom: 16px; }
+      .quote { color: rgba(11,11,11,0.72); font-size: 1.1rem; line-height: 1.7; margin-bottom: 18px; }
+      .review-card strong { display: block; margin-bottom: 4px; }
+      .review-card span { color: var(--muted); font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; }
+      .social-card .card-bg { background-position: center; }
+      .social-card .overlay {
+        position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.72));
+      }
+      .social-card .card-content { left: 16px; right: 16px; bottom: 16px; }
+      .social-card .card-content strong { display: block; color: rgba(255,255,255,0.8); letter-spacing: 0.13em; text-transform: uppercase; font-size: 0.68rem; margin-bottom: 4px; }
+      .social-card .card-content span { color: var(--white); font-size: 1rem; }
+      .newsletter { background: linear-gradient(90deg, rgba(11,11,11,0.96), rgba(11,11,11,0.9)); color: var(--white); padding: 72px 0; }
+      .newsletter-inner { width: min(var(--max-width), calc(100% - 32px)); margin: 0 auto; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
+      .newsletter h3 { font-size: clamp(2.6rem, 5vw, 4.2rem); color: var(--white); margin-bottom: 8px; }
+      .newsletter p { color: rgba(255,255,255,0.72); }
+      .subscribe-form { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+      .subscribe-form input {
+        min-width: min(100%, 360px); min-height: 52px; padding: 0 16px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: var(--white);
+      }
+      .subscribe-form input::placeholder { color: rgba(255,255,255,0.5); }
+      .site-footer { background: var(--black); color: var(--white); padding: 72px 0 20px; }
+      .footer-grid { width: min(var(--max-width), calc(100% - 32px)); margin: 0 auto; display: grid; grid-template-columns: 1.3fr 0.9fr 0.9fr 0.9fr 1.1fr 1.1fr; gap: 24px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .footer-col h4 { font-family: 'Inter', sans-serif; font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+      .footer-col ul { list-style: none; padding: 0; margin: 0; }
+      .footer-col li, .footer-col p { color: rgba(255,255,255,0.72); font-size: 0.92rem; line-height: 2; }
+      .footer-legal { width: min(var(--max-width), calc(100% - 32px)); margin: 0 auto; padding-top: 18px; display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; color: rgba(255,255,255,0.7); font-size: 0.8rem; }
+      .page-hero { background: linear-gradient(90deg, rgba(11,11,11,0.85), rgba(11,11,11,0.5)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; color: var(--white); min-height: 420px; display: flex; align-items: center; }
+      .page-hero-inner { width: min(var(--max-width), calc(100% - 32px)); margin: 0 auto; padding: 76px 0; }
+      .page-hero h1 { font-size: clamp(3.2rem, 6vw, 6rem); color: var(--white); line-height: 0.94; margin-bottom: 12px; }
+      .page-hero p { max-width: 620px; color: rgba(255,255,255,0.74); font-size: 1.08rem; }
+      .filters { display:flex; flex-wrap:wrap; gap:10px; margin: 24px 0 28px; }
+      .filter-btn { border:1px solid rgba(11,11,11,0.12); background: var(--white); color: var(--black); border-radius: 999px; padding: 8px 16px; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; }
+      .filter-btn.active, .filter-btn:hover { background: var(--black); border-color: var(--black); color: var(--white); }
+      .search-box { min-height: 46px; border: 1px solid rgba(11,11,11,0.1); border-radius: 999px; padding: 0 16px; min-width: min(100%, 350px); }
+      .faq-list { display: grid; gap: 14px; }
+      .faq-item { background: var(--white); border: 1px solid rgba(11,11,11,0.08); border-radius: 10px; overflow: hidden; }
+      .faq-question { width: 100%; background: transparent; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; text-align: left; gap: 18px; padding: 18px 18px; font-size: 1rem; font-weight: 600; color: var(--black); }
+      .faq-sign { color: var(--rich-gold); font-size: 1.6rem; }
+      .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 18px; color: rgba(11,11,11,0.7); }
+      .faq-item.open .faq-answer { max-height: 180px; padding: 0 18px 18px; }
+      .feature-box { background: var(--ivory); border: 1px solid rgba(11,11,11,0.05); border-radius: 12px; padding: 26px 24px; }
+      .feature-box h3 { font-size: clamp(2.4rem, 4vw, 4rem); margin-bottom: 14px; }
+      .feature-box p { color: rgba(11,11,11,0.72); }
+      .contact-card, .checkout-box, .summary-box, .info-card, .faq-box { background: var(--white); border: 1px solid rgba(11,11,11,0.08); border-radius: 12px; padding: 22px 20px; }
+      .contact-card h4, .checkout-box h4, .summary-box h4, .info-card h4 { font-size: 1.5rem; margin-bottom: 12px; }
+      .order-form { display: grid; gap: 14px; }
+      .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .order-form input, .order-form select, .order-form textarea { width: 100%; min-height: 48px; border-radius: 6px; border: 1px solid rgba(11,11,11,0.12); padding: 0 12px; background: var(--white); }
+      .order-form textarea { min-height: 120px; resize: vertical; padding: 12px; }
+      .summary-box { background: var(--ivory); }
+      .totals { display: grid; gap: 10px; margin-top: 18px; }
+      .total-row { display: flex; justify-content: space-between; gap: 16px; font-size: 0.96rem; color: rgba(11,11,11,0.75); }
+      .total-row strong { color: var(--black); }
+      .cart-item, .wishlist-item { display: grid; grid-template-columns: 120px 1fr auto; gap: 16px; align-items: center; background: var(--white); border: 1px solid rgba(11,11,11,0.08); border-radius: 12px; padding: 16px; }
+      .cart-thumb, .wishlist-thumb { width: 100%; height: 120px; border-radius: 10px; background-size: cover; background-position: center; }
+      .cart-item h4, .wishlist-item h4 { font-size: 1.35rem; margin-bottom: 6px; }
+      .remove-link { color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.68rem; cursor: pointer; }
+      .blank-state { background: var(--ivory); border: 1px solid rgba(11,11,11,0.05); border-radius: 12px; padding: 30px 20px; text-align: center; }
+      .blank-state h3 { font-size: clamp(2.3rem, 4vw, 3.4rem); margin-bottom: 10px; }
+      .detail-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 34px; align-items: flex-start; }
+      .detail-gallery { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 16px; }
+      .thumbs { display: grid; gap: 12px; }
+      .thumb { height: 150px; border-radius: 10px; border: 2px solid transparent; background-size: cover; background-position: center; cursor: pointer; transition: border-color 0.24s ease; }
+      .thumb.active { border-color: var(--gold); }
+      .detail-image { min-height: 660px; border-radius: 12px; background-size: cover; background-position: center; border: 1px solid rgba(11,11,11,0.06); }
+      .detail-card { background: var(--white); border: 1px solid rgba(11,11,11,0.08); border-radius: 12px; padding: 22px 20px; }
+      .detail-card h1 { font-size: clamp(3rem, 5vw, 5.1rem); line-height: 0.92; margin-bottom: 10px; }
+      .detail-price { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+      .detail-desc { color: rgba(11,11,11,0.72); margin-bottom: 18px; }
+      .option-block { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 12px 0; border-top: 1px solid rgba(11,11,11,0.08); border-bottom: 1px solid rgba(11,11,11,0.08); margin-bottom: 18px; }
+      .swatches { display: flex; gap: 10px; margin-top: 8px; }
+      .swatch { width: 28px; height: 28px; border-radius: 50%; border: 2px solid rgba(11,11,11,0.12); cursor: pointer; }
+      .swatch.active { border-color: var(--gold); }
+      .sizes { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+      .size-pill { min-width: 40px; height: 34px; border-radius: 6px; border: 1px solid rgba(11,11,11,0.12); display: grid; place-items: center; font-size: 0.72rem; cursor: pointer; }
+      .qty { display: flex; width: max-content; border: 1px solid rgba(11,11,11,0.12); border-radius: 6px; overflow: hidden; }
+      .qty button { width: 42px; height: 42px; border: none; background: transparent; font-size: 1.4rem; cursor: pointer; }
+      .qty input { width: 56px; height: 42px; border: 1px solid rgba(11,11,11,0.12); border-top: none; border-bottom: none; text-align: center; font-weight: 700; }
+      .detail-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+      .meta-list { display: grid; gap: 12px; margin-top: 24px; }
+      .meta-item { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(11,11,11,0.08); }
+      .meta-item strong { font-weight: 600; }
+      @media (max-width: 1100px) {
+        .header-inner { grid-template-columns: 1fr auto auto; }
+        .main-nav { display: none; }
+        .mobile-toggle { display: inline-flex; }
+        .utils .icon-btn:nth-child(1), .utils .icon-btn:nth-child(2), .utils .icon-btn:nth-child(3) { display: none; }
+        .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .social-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      }
+      @media (max-width: 860px) {
+        .hero-inner, .story-wrap, .newsletter-inner, .contact-grid, .faq-grid, .checkout-grid, .cart-grid, .detail-layout, .editorial, .collections-grid, .lookbook-grid, .about-grid, .trust-grid, .reviews-grid { grid-template-columns: 1fr; }
+        .audience-grid, .category-grid, .wishlist-grid { grid-template-columns: 1fr; }
+        .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .hero { min-height: 610px; }
+        .newsletter-form { justify-content: flex-start; }
+        .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (max-width: 560px) {
+        .brand { font-size: 0.66rem; letter-spacing: 0.08em; }
+        .hero-copy h1 { font-size: 3.3rem; }
+        .hero-actions { flex-direction: column; align-items: stretch; }
+        .btn { width: 100%; }
+        .products-grid, .social-grid, .category-grid { grid-template-columns: 1fr; }
+        .cart-item, .wishlist-item { grid-template-columns: 90px 1fr; }
+        .cart-item .remove-link { grid-column: 1 / -1; }
+        .two-col { grid-template-columns: 1fr; }
+        .footer-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a href="#home" class="brand nav-link" data-page="home">
+          <img class="brand-logo" src="img/Ruthomok empire (2)01.png" alt="Rutomok Empire logo" />
+        </a>
+
+        <nav class="main-nav" aria-label="Main menu">
+          <div class="nav-item active"><a href="#home" class="nav-link" data-page="home">Home</a></div>
+          <div class="nav-item"><a href="#shop" class="nav-link" data-page="shop">Shop</a><div class="menu"><a href="#shop" class="nav-link" data-page="shop">All Products</a><a href="#shop" class="nav-link" data-page="shop">Women</a><a href="#shop" class="nav-link" data-page="shop">Men</a><a href="#shop" class="nav-link" data-page="shop">Kids</a><a href="#shop" class="nav-link" data-page="shop">Clothing</a><a href="#shop" class="nav-link" data-page="shop">Shoes</a><a href="#shop" class="nav-link" data-page="shop">Bags</a><a href="#shop" class="nav-link" data-page="shop">Jewelry</a><a href="#shop" class="nav-link" data-page="shop">Glasses</a><a href="#shop" class="nav-link" data-page="shop">Accessories</a><a href="#shop" class="nav-link" data-page="shop">Best Sellers</a><a href="#shop" class="nav-link" data-page="shop">Sale</a></div></div>
+          <div class="nav-item"><a href="#collections" class="nav-link" data-page="collections">Collections</a><div class="menu"><a href="#collections" class="nav-link" data-page="collections">New Season</a><a href="#collections" class="nav-link" data-page="collections">Women's Edit</a><a href="#collections" class="nav-link" data-page="collections">Men's Edit</a><a href="#collections" class="nav-link" data-page="collections">Kids' Edit</a><a href="#collections" class="nav-link" data-page="collections">Everyday Essentials</a><a href="#collections" class="nav-link" data-page="collections">Statement Pieces</a><a href="#collections" class="nav-link" data-page="collections">The Elegant Edit</a><a href="#collections" class="nav-link" data-page="collections">Accessories Edit</a></div></div>
+          <div class="nav-item"><a href="#new-arrivals" class="nav-link" data-page="new-arrivals">New Arrivals</a></div>
+          <div class="nav-item"><a href="#lookbook" class="nav-link" data-page="lookbook">Lookbook</a></div>
+          <div class="nav-item"><a href="#about" class="nav-link" data-page="about">About</a><div class="menu"><a href="#about" class="nav-link" data-page="about">Our Story</a><a href="#about" class="nav-link" data-page="about">Our Philosophy</a><a href="#about" class="nav-link" data-page="about">What We Offer</a><a href="#about" class="nav-link" data-page="about">Why Rutomok Empire</a><a href="#faq" class="nav-link" data-page="faq">FAQ</a></div></div>
+          <div class="nav-item"><a href="#contact" class="nav-link" data-page="contact">Contact</a></div>
+        </nav>
+
+        <div class="utils">
+          <button type="button" class="icon-btn" data-search-trigger aria-label="Search">⌕</button>
+          <button type="button" class="icon-btn" data-page="wishlist" aria-label="Wishlist">♡<span class="count" data-wishlist-count>0</span></button>
+          <button type="button" class="icon-btn" data-page="cart" aria-label="Cart">🛒<span class="count" data-cart-count>0</span></button>
+          <a href="https://wa.me/2348139447350?text=Hello%20Rutomok%20Empire%2C%20I%27m%20interested%20in%20this%20product.%20Please%20can%20you%20help%20me%20with%20availability%20and%20ordering%3F" target="_blank" rel="noreferrer" class="icon-btn" aria-label="WhatsApp">✆</a>
+          <button type="button" class="icon-btn mobile-toggle" aria-label="Open menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-backdrop" id="mobile-backdrop"></div>
+    <aside class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <div class="mobile-header">
+        <div class="brand" style="color: var(--white);"><img class="brand-logo" src="img/Ruthomok empire (2)01.png" alt="Rutomok Empire logo" /></div>
+        <button type="button" class="icon-btn" id="close-mobile-nav" aria-label="Close menu" style="color: var(--white); border-color: rgba(255,255,255,0.1);">✕</button>
+      </div>
+      <div class="mobile-panel">
+        <a href="#home" class="mobile-link nav-link" data-page="home">Home</a>
+        <a href="#shop" class="mobile-link nav-link" data-page="shop">Shop</a>
+        <a href="#collections"
+         class="mobile-link nav-link" data-page="collections">Collections</a>
+        <a href="#new-arrivals" class="mobile-link nav-link" data-page="new-arrivals">New Arrivals</a>
+        <a href="#lookbook" class="mobile-link nav-link" data-page="lookbook">Lookbook</a>
+        <a href="#about" class="mobile-link nav-link" data-page="about">About</a>
+        <a href="#contact" class="mobile-link nav-link" data-page="contact">Contact</a>
+        <a href="#faq" class="mobile-link nav-link" data-page="faq">FAQ</a>
+        <a href="https://wa.me/2348139447350?text=Hello%20Rutomok%20Empire%2C%20I%27m%20interested%20in%20this%20product.%20Please%20can%20you%20help%20me%20with%20availability%20and%20ordering%3F" target="_blank" rel="noreferrer" class="mobile-link">WhatsApp</a>
+      </div>
+    </aside>
+
+    <main id="app"></main>
+    <a href="https://wa.me/2348139447350?text=Hello%20Rutomok%20Empire%2C%20I%27m%20interested%20in%20this%20product.%20Please%20can%20you%20help%20me%20with%20availability%20and%20ordering%3F" target="_blank" rel="noreferrer" aria-label="WhatsApp" style="position:fixed; right:22px; bottom:22px; z-index:170; width:58px; height:58px; border-radius:50%; background:#25D366; color: var(--white); display:grid; place-items:center; box-shadow:0 14px 26px rgba(37,211,102,0.28); font-size:1.7rem;">✆</a>
+
+    <footer class="site-footer" id="site-footer"></footer>
+
+    <script>
+      const products = [
+        { id: 'luna-satin-set', name: 'Luna Satin Evening Set', audience: 'Women', category: 'Clothing', color: 'Burgundy', price: 54000, image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80', gallery: ['https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80'] },
+        { id: 'aston-linen-blazer', name: 'Aston Linen Blazer', audience: 'Men', category: 'Clothing', color: 'Ivory', price: 48000, image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80', gallery: ['https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80'] },
+        { id: 'breeze-denim-set', name: 'Breeze Denim Set', audience: 'Kids', category: 'Clothing', color: 'Blue', price: 26000, image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=80', gallery: ['https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80'] },
+        { id: 'urban-loafers', name: 'Urban Loafers', audience: 'Men', category: 'Shoes', color: 'Brown', price: 38000, image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=80', gallery: ['https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80'] },
+        { id: 'harbor-leather-tote', name: 'Harbor Leather Tote', audience: 'Women', category: 'Bags', color: 'Tan', price: 46000, image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80', gallery: ['https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=80'] },
+        { id: 'aurelia-gold-hoops', name: 'Aurelia Gold Hoops', audience: 'Women', category: 'Jewelry', color: 'Gold', price: 22000, image: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=80', gallery: ['https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80'] },
+        { id: 'solstice-frame', name: 'Solstice Frame', audience: 'Men', category: 'Glasses', color: 'Black', price: 31000, image: 'https://images.unsplash.com/photo-1577803947579-9f90d4c4b0d1?auto=format&fit=crop&w=900&q=80', gallery: ['https://images.unsplash.com/photo-1577803947579-9f90d4c4b0d1?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80'] },
+        { id: 'velvet-wrap-accessory', name: 'Velvet Wrap Accessory', audience: 'Women', category: 'Accessories', color: 'Red', price: 17000, image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80', gallery: ['https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80'] },
+        { id: 'classic-espadrilles', name: 'Classic Espadrilles', audience: 'Women', category: 'Shoes', color: 'Cream', price: 29000, image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=80', gallery: ['https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80'] },
+        { id: 'mini-explorer-pack', name: 'Mini Explorer Pack', audience: 'Kids', category: 'Bags', color: 'Navy', price: 20000, image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80', gallery: ['https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80'] }
+      ];
+      const state = { page: 'home', selectedProductId: products[0].id, cart: [], wishlist: [], recent: [], filters: { audience: 'all', category: 'all', search: '' } };
+      const formatPrice = (n) => `₦${new Intl.NumberFormat('en-NG').format(n)}`;
+      function renderFooter() {
+        document.getElementById('site-footer').innerHTML = `
+          <div class="footer-grid">
+            <div class="footer-col"><img class="footer-logo" src="img/Ruthomok empire (2)01.png" alt="Rutomok Empire logo" /><h4>RUTOMOK EMPIRE</h4><p>Fashion for women, men and kids — curated style with confidence, character and everyday ease.</p></div>
+            <div class="footer-col"><h4>Shop</h4><ul><li>Women</li><li>Men</li><li>Kids</li><li>Clothing</li><li>Shoes</li><li>Bags</li><li>Jewelry</li><li>Glasses</li><li>Accessories</li><li>New Arrivals</li><li>Best Sellers</li></ul></div>
+            <div class="footer-col"><h4>Customer Care</h4><ul><li><a href="#faq" class="nav-link" data-page="faq">FAQ</a></li><li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li><li><a href="https://wa.me/2348139447350?text=Hello%20Rutomok%20Empire%2C%20I%27m%20interested%20in%20this%20product.%20Please%20can%20you%20help%20me%20with%20availability%20and%20ordering%3F" target="_blank" rel="noreferrer">WhatsApp</a></li><li>Delivery</li><li>Returns</li></ul></div>
+            <div class="footer-col"><h4>About</h4><ul><li><a href="#about" class="nav-link" data-page="about">Our Story</a></li><li><a href="#about" class="nav-link" data-page="about">Our Philosophy</a></li><li><a href="#about" class="nav-link" data-page="about">Why Rutomok Empire</a></li></ul></div>
+            <div class="footer-col"><h4>Follow Us</h4><ul><li>Facebook</li><li>Rutomok Empire</li></ul></div>
+            <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:rutomokempire1@gmail.com">rutomokempire1@gmail.com</a></li><li><a href="tel:+2348139447350">+234 813 944 7350</a></li></ul></div>
+          </div>
+          <div class="footer-legal"><span>© 2026 Rutomok Empire. All rights reserved.</span><span>JOIN THE EMPIRE</span></div>
+        `;
+      }
+      function getProductById(id) { return products.find(product => product.id === id) || products[0]; }
+      function updateCounts() { const cartCount = document.querySelector('[data-cart-count]'); const wishlistCount = document.querySelector('[data-wishlist-count]'); const cartTotal = state.cart.reduce((sum, item) => sum + item.qty, 0); if (cartCount) cartCount.textContent = cartTotal; if (wishlistCount) wishlistCount.textContent = state.wishlist.length; }
+      function setNavState(page) { document.querySelectorAll('.nav-link').forEach(link => { const current = link.getAttribute('data-page'); const parent = link.closest('.nav-item'); if (current === page) { link.classList.add('active'); if (parent) parent.classList.add('active'); } else { link.classList.remove('active'); if (parent) parent.classList.remove('active'); } }); }
+      function renderProductCard(product) { const inWishlist = state.wishlist.includes(product.id); return `
+        <article class="product-card" data-product-id="${product.id}">
+          <div class="product-image-wrap">
+            <div class="product-actions"><button type="button" class="tiny-icon" data-wishlist="${product.id}" aria-label="Add to wishlist">${inWishlist ? '♥' : '♡'}</button><button type="button" class="tiny-icon" data-quick-view="${product.id}" aria-label="Quick view">⌕</button></div>
+            <div class="product-image" style="background-image:url('${product.image}')"></div>
+          </div>
+          <div class="product-card-body">
+            <div class="meta-row"><span class="meta-tag">${product.audience}</span><span class="meta-tag">${product.category}</span></div>
+            <div class="product-name">${product.name}</div>
+            <div class="price">${formatPrice(product.price)}</div>
+            <div class="product-row"><span class="mini-label">${product.color}</span><button type="button" class="small-btn" data-add-cart="${product.id}">Add to Cart</button></div>
+          </div>
+        </article>
+      `; }
+      function renderHomePage() { return `
+        <section class="hero"><div class="hero-inner"><div class="hero-copy"><span class="eyebrow">Fashion for Women, Men & Kids</span><h1>ELEVATE YOUR STYLE.<br>OWN YOUR LOOK.</h1><p>Discover carefully selected fashion pieces for women, men and kids — from everyday essentials to statement styles.</p><div class="hero-actions"><button type="button" class="btn btn-primary nav-link" data-page="shop">Shop Now</button><button type="button" class="btn btn-ghost nav-link" data-page="collections">Explore Collections</button></div><div class="hero-stats"><div class="stat"><strong>W</strong><span>Women</span></div><div class="stat"><strong>M</strong><span>Men</span></div><div class="stat"><strong>K</strong><span>Kids</span></div></div></div><div class="hero-panel"><div class="hero-panel-image"></div><div class="hero-panel-row"><div><span>Curated edits</span><strong>New Season Icons</strong></div><button type="button" class="btn btn-secondary nav-link" data-page="new-arrivals" style="min-height:40px; padding:0 16px;">Shop</button></div></div></div></section>
+        <section class="section ivory"><div class="container"><div class="section-head"><div><span class="eyebrow">Curated by audience</span><h2>Shop by Audience</h2></div></div><div class="audience-grid"><article class="audience-card"><div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1100&q=80')"></div><div class="dark-overlay"></div><div class="card-content"><h3>Women</h3><button type="button" class="btn btn-primary nav-link" data-page="shop">Shop Women</button></div></article><article class="audience-card"><div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1100&q=80')"></div><div class="dark-overlay"></div><div class="card-content"><h3>Men</h3><button type="button" class="btn btn-primary nav-link" data-page="shop">Shop Men</button></div></article><article class="audience-card"><div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=1100&q=80')"></div><div class="dark-overlay"></div><div class="card-content"><h3>Kids</h3><button type="button" class="btn btn-primary nav-link" data-page="shop">Shop Kids</button></div></article></div></div></section>
+        <section class="section white"><div class="container"><div class="section-head"><div><span class="eyebrow">Discover by category</span><h2>Shop by Category</h2></div></div><div class="category-grid">${['Clothing','Shoes','Bags','Jewelry','Glasses','Accessories'].map((cat, index) => `
+          <article class="category-card nav-link" data-page="shop" style="cursor:pointer;"><div class="card-bg" style="background-image:url('${['https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=80','https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1100&q=80','https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1100&q=80','https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1100&q=80','https://images.unsplash.com/photo-1577803947579-9f90d4c4b0d1?auto=format&fit=crop&w=1100&q=80','https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1100&q=80'][index]}')"></div><div class="dark-overlay"></div><div class="card-content"><h3>${cat}</h3><button type="button" class="btn btn-secondary">Shop</button></div></article>`).join('')}</div></div></section>
+        <section class="section white"><div class="container"><div class="section-head"><div><span class="eyebrow">Fresh selections</span><h2>New Arrivals</h2></div><div class="copy">Fresh styles selected for the season.</div></div><div class="products-grid">${products.slice(0, 4).map(renderProductCard).join('')}</div><div style="margin-top:24px; text-align:center;"><button type="button" class="btn btn-primary nav-link" data-page="new-arrivals">View All New Arrivals</button></div></div></section>
+        <section class="section black"><div class="container"><div class="section-head" style="margin-bottom:18px;"><div><span class="eyebrow" style="color: var(--gold);">Fashion editorial</span><h2>The Empire Edit</h2></div></div><div class="editorial"><div class="editorial-image"></div><div class="editorial-copy"><span class="eyebrow" style="color: var(--gold);">Style without limits.</span><h3>THE EMPIRE EDIT</h3><p>Explore a curated mix of women’s pieces, men’s essentials, kids’ comfort and finishing touches that make every day feel elevated.</p><button type="button" class="btn btn-secondary nav-link" data-page="collections">Explore The Edit</button></div></div></div></section>
+        <section class="section white"><div class="container"><div class="section-head"><div><span class="eyebrow">Style stories</span><h2>Rutomok Lookbook</h2></div></div><div class="lookbook-grid">${[{ title: 'Everyday Elegance', image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80', num: '01' },{ title: 'Statement Style', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80', num: '02' },{ title: 'Street Style', image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80', num: '03' },{ title: 'The Finishing Touch', image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80', num: '04' }].map(item => `<article class="lookbook-card"><div class="lookbook-image" style="background-image:url('${item.image}')"></div><div class="dark-overlay"></div><div class="caption"><h3>${item.title}</h3><span class="badge">${item.num}</span></div></article>`).join('')}</div><div style="margin-top:24px; text-align:center;"><button type="button" class="btn btn-primary nav-link" data-page="lookbook">View Lookbook</button></div></div></section>
+        <section class="section ivory"><div class="container"><div class="story-wrap"><div class="story-photo"></div><div class="story-box"><span class="eyebrow">Brand story</span><h3>MORE THAN FASHION.<br>IT'S RUTOMOK.</h3><p>Rutomok Empire brings together fashion, individuality and confidence through carefully selected pieces for every generation.</p><button type="button" class="btn btn-primary nav-link" data-page="about">Discover Our Story</button></div></div></div></section>
+        <section class="section white"><div class="container"><div class="section-head"><div><span class="eyebrow">Top picks</span><h2>Best Sellers</h2></div></div><div class="products-grid">${products.slice(1, 5).map(renderProductCard).join('')}</div><div style="margin-top:24px; text-align:center;"><button type="button" class="btn btn-primary nav-link" data-page="shop">Shop Best Sellers</button></div></div></section>
+        <section class="section black"><div class="container"><div class="section-head"><div><span class="eyebrow" style="color: var(--gold);">The difference</span><h2>Why Shop Rutomok Empire</h2></div></div><div class="trust-grid">${[['✦','Carefully Selected Styles'],['✓','Quality-Focused Products'],['▣','Fashion for Every Generation'],['◌','Personal Customer Care'],['◎','Easy Ordering'],['✆','WhatsApp Support']].map(([icon, text]) => `<div class="trust-item"><div class="icon">${icon}</div><h4>${text}</h4></div>`).join('')}</div></div></section>
+        <section class="section ivory"><div class="container"><div class="section-head"><div><span class="eyebrow">Customer care</span><h2>Customer Reviews</h2></div></div><div class="reviews-grid"><div class="review-card"><div class="stars">★★★★★</div><p class="quote">“The quality and styling are exactly what we needed for a polished everyday wardrobe.”</p><strong>Style Customer</strong><span>Verified buyer</span></div><div class="review-card"><div class="stars">★★★★★</div><p class="quote">“Easy to order and the pieces feel premium and confident. The detail is always considered.”</p><strong>Everyday Client</strong><span>Repeat shopper</span></div><div class="review-card"><div class="stars">★★★★★</div><p class="quote">“Support has been warm and helpful; the collection feels carefully chosen for all ages.”</p><strong>Family Shopper</strong><span>Community member</span></div></div></div></section>
+        <section class="section white"><div class="container"><div class="section-head"><div><span class="eyebrow">Social media</span><h2>Follow Rutomok Empire</h2></div></div><div class="social-grid">${['https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80','https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80'].map(img => `<article class="social-card"><div class="card-bg" style="background-image:url('${img}')"></div><div class="overlay"></div><div class="card-content"><strong>Facebook</strong><span>Rutomok Empire</span></div></article>`).join('')}</div></div></section>
+        <section class="section ivory"><div class="container"><div class="section-head"><div><span class="eyebrow">Recently viewed</span><h2>Recently Viewed</h2></div></div>${state.recent.length ? `<div class="products-grid">${state.recent.slice(0, 4).map(id => renderProductCard(getProductById(id))).join('')}</div>` : `<div class="blank-state"><h3>Browse and save what you love</h3><p>View a product to see it appear here.</p></div>`}</div></section>
+        <section class="newsletter"><div class="newsletter-inner"><div><span class="eyebrow" style="color: var(--gold);">Newsletter</span><h3>JOIN THE EMPIRE</h3><p>Be the first to discover new arrivals, style updates and selected collections.</p></div><form class="subscribe-form" id="newsletter-form"><input type="email" placeholder="Your email address" aria-label="Your email address" /><button type="submit" class="btn btn-secondary">Subscribe</button></form></div></section>
+      `; }
+      function renderShopPage() {
+        const allowedAudiences = ['all', 'Women', 'Men', 'Kids'];
+        const allowedCategories = ['all', 'Clothing', 'Shoes', 'Bags', 'Jewelry', 'Glasses', 'Accessories'];
+        const filtered = products.filter((product) => { const audienceMatch = state.filters.audience === 'all' || product.audience === state.filters.audience; const categoryMatch = state.filters.category === 'all' || product.category === state.filters.category; const searchMatch = !state.filters.search || product.name.toLowerCase().includes(state.filters.search.toLowerCase()) || product.category.toLowerCase().includes(state.filters.search.toLowerCase()); return audienceMatch && categoryMatch && searchMatch; });
+        return `
+          <section class="page-hero"><div class="page-hero-inner"><span class="eyebrow" style="color: var(--gold);">Curated selection</span><h1>Shop the Empire</h1><p>Discover premium style for women, men and kids across collections designed to fit real lifestyles.</p></div></section>
+          <section class="section white"><div class="container"><div class="filters">${allowedAudiences.map(value => `<button type="button" class="filter-btn ${state.filters.audience === value ? 'active' : ''}" data-audience="${value}">${value === 'all' ? 'All' : value}</button>`).join('')}</div><div class="filters">${allowedCategories.map(value => `<button type="button" class="filter-btn ${state.filters.category === value ? 'active' : ''}" data-category="${value}">${value === 'all' ? 'All' : value}</button>`).join('')}</div><div class="filters" style="margin-top:0;"><input type="search" class="search-box" value="${state.filters.search}" data-search-input placeholder="Search products" aria-label="Search products" /></div><div class="products-grid" style="margin-top:24px;">${filtered.length ? filtered.map(renderProductCard).join('') : `<div class="blank-state" style="grid-column:1 / -1;"><h3>No matches found.</h3><p>Try a different category or search term.</p></div>`}</div></div></section>
+        `;
+      }
+      function renderCollectionsPage() { const items = [{ title: 'New Season', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1300&q=80' },{ title: "Women's Edit", image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1300&q=80' },{ title: "Men's Edit", image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1300&q=80' },{ title: "Kids' Edit", image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=1300&q=80' },{ title: 'Everyday Essentials', image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1300&q=80' },{ title: 'Statement Pieces', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1300&q=80' },{ title: 'The Elegant Edit', image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1300&q=80' },{ title: 'Accessories Edit', image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1300&q=80' }]; return `
+        <section class="page-hero"><div class="page-hero-inner"><span class="eyebrow" style="color: var(--gold);">Curated stories</span><h1>Collections</h1><p>Premium selections for each phase of the day, each season and every kind of statement.</p></div></section>
+        <section class="section white"><div class="container"><div class="collections-grid">${items.map(item => `<article class="collection-card nav-link" data-page="shop" style="cursor:pointer;"><div class="card-image" style="background-image:url('${item.image}')"></div><div class="dark-overlay"></div><div class="card-content"><span class="badge">Collection</span><h3>${item.title}</h3><button type="button" class="btn btn-secondary">Shop Collection</button></div></article>`).join('')}</div></div></section>
+      `; }
+      function renderNewArrivalsPage() { return `
+        <section class="page-hero"><div class="page-hero-inner"><span class="eyebrow" style="color: var(--gold);">Just arrived</span><h1>New Arrivals</h1><p>Fresh, fashion-forward finds selected for the season.</p></div></section>
+        <section class="section white"><div class="container"><div class="section-head"><div><span class="eyebrow">Featured</span><h2>Featured New Pieces</h2></div></div><div class="products-grid">${products.slice(0, 4).map(renderProductCard).join('')}</div><div class="section-head" style="margin-top:56px;"><div><span class="eyebrow">By audience</span><h2>Women's New Arrivals</h2></div></div><div class="products-grid">${products.filter(p => p.audience === 'Women').slice(0, 4).map(renderProductCard).join('')}</div><div class="section-head" style="margin-top:56px;"><div><span class="eyebrow">By audience</span><h2>Men's New Arrivals</h2></div></div><div class="products-grid">${products.filter(p => p.audience === 'Men').slice(0, 4).map(renderProductCard).join('')}</div><div class="section-head" style="margin-top:56px;"><div><span class="eyebrow">By audience</span><h2>Kids' New Arrivals</h2></div></div><div class="products-grid">${products.filter(p => p.audience === 'Kids').slice(0, 4).map(renderProductCard).join('')}</div><div style="margin-top:28px; text-align:center;"><button type="button" class="btn btn-primary nav-link" data-page="shop">Shop All New Arrivals</button></div></div></section>
+      `; }
+      function renderLookbookPage() { const panels = [{ title: 'Signature Style', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80' },{ title: "Women's Style", image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80' },{ title: "Men's Style", image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80' },{ title: "Kids' Style", image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=1200&q=80' },{ title: 'Everyday Elegance', image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80' },{ title: 'Statement Style', image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80' },{ title: 'The Finishing Touch', image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80' },{ title: 'Shop the Look', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80' }]; return `
+        <section class="page-hero"><div class="page-hero-inner"><span class="eyebrow" style="color: var(--gold);">Visual stories</span><h1>Lookbook</h1><p>Minimal styling, maximum expression — everyday polish, statement pieces and finishing details.</p></div></section>
+        <section class="section white"><div class="container"><div class="collections-grid">${panels.map(panel => `<article class="collection-card"><div class="card-image" style="background-image:url('${panel.image}')"></div><div class="dark-overlay"></div><div class="card-content"><h3>${panel.title}</h3><button type="button" class="btn btn-primary">View Style</button></div></article>`).join('')}</div><div style="margin-top:26px; text-align:center;"><button type="button" class="btn btn-primary nav-link" data-page="shop">Shop The Look</button></div></div></section>
+      `; }
+      function renderAboutPage() { return `
+        <section class="page-hero"><div class="page-hero-inner"><span class="eyebrow" style="color: var(--gold);">Our identity</span><h1>About Rutomok Empire</h1><p>Curated fashion for every generation with an eye on confidence, character and daily ease.</p></div></section>
+        <section class="section white"><div class="container story-wrap"><div class="story-photo"></div><div class="story-box"><span class="eyebrow">Our Story</span><h3>Style that feels like home.</h3><p>Rutomok Empire is built around the idea that style should feel personal, polished and easy to wear across every stage of life. We bring together pieces that balance confidence, comfort and quality.</p><p>From wardrobe staples to statement touches, we curate with the everyday and the exceptional in mind.</p></div></div></section>
+        <section class="section ivory"><div class="container"><div class="section-head"><div><span class="eyebrow">Our values</span><h2>Our Philosophy</h2></div></div><div class="about-grid"><div class="info-card"><h4>What We Offer</h4><p>Carefully selected fashion pieces for women, men and kids with a premium and practical point of view.</p></div><div class="info-card"><h4>Why Rutomok Empire</h4><p>Because pieces are chosen to feel modern, elevated and wearable — designed to move with real life.</p></div><div class="info-card"><h4>Brand Statement</h4><p>We believe fashion should be expressive, confident and inclusive across generations.</p></div><div class="info-card"><h4>Ongoing Support</h4><p>Our customer care approach keeps shopping personal, easy and reassuring from discovery to delivery.</p></div></div></div></section>
+      `; }
+      function renderContactPage() { return `
+        <section class="page-hero"><div class="page-hero-inner"><span class="eyebrow" style="color: var(--gold);">Let’s connect</span><h1>Contact us</h1><p>Speak to our team for product queries, styling support and order guidance.</p></div></section>
+        <section class="section white"><div class="container contact-grid"><div class="faq-grid" style="grid-template-columns:1fr;"><div class="contact-card"><h4>Contact Information</h4><p><strong>Email:</strong> <a href="mailto:rutomokempire1@gmail.com">rutomokempire1@gmail.com</a></p><p><strong>WhatsApp:</strong> <a href="tel:+2348139447350">+234 813 944 7350</a></p><p><strong>Facebook:</strong> Rutomok Empire</p></div><div class="contact-card"><h4>WhatsApp Concierge</h4><p>Ask about availability, sizing, product recommendations and ordering support.</p><a href="https://wa.me/2348139447350?text=Hello%20Rutomok%20Empire%2C%20I%27m%20interested%20in%20this%20product.%20Please%20can%20you%20help%20me%20with%20availability%20and%20ordering%3F" class="btn btn-secondary" target="_blank" rel="noreferrer" style="margin-top:14px;">Message on WhatsApp</a></div></div><div class="contact-card"><h4>Contact Form</h4><div class="order-form"><div class="two-col"><input type="text" placeholder="Full name" /><input type="email" placeholder="Email address" /></div><input type="text" placeholder="Subject" /><textarea placeholder="Your message"></textarea><button type="button" class="btn btn-primary">Send Message</button></div></div></div></section>
+        <section class="section ivory"><div class="container"><div class="section-head"><div><span class="eyebrow">Support</span><h2>FAQ Preview</h2></div></div><div class="faq-list">${[['How do I place an order?','You can contact us directly by phone or WhatsApp, or use the contact form and our team will guide you through the next steps.'],['Can I ask about a specific product?','Yes. Please send the product name, category and any preferred style details, and we will help with availability and options.'],['Do you offer support for sizing?','Yes. Sizing questions can be discussed through WhatsApp or email so we can recommend the most suitable fit.']].map(([q,a]) => `<div class="faq-item open"><button type="button" class="faq-question"><span>${q}</span><span class="faq-sign">−</span></button><div class="faq-answer"><p>${a}</p></div></div>`).join('')}</div></div></section>
+      `; }
+      function renderFaqPage() { const entries = [{ q: 'What products are available?', a: 'Our collection includes a curated mix of women’s, men’s and kids’ fashion styles, with categories such as clothing, shoes, bags, jewelry, glasses and accessories.' },{ q: 'How do I ask about a product?', a: 'Contact the team through WhatsApp, email or the contact form and share the item name or category for assistance.' },{ q: 'Are payment methods fixed?', a: 'Accepted payment methods may be updated by the store owner. Please confirm the latest options before completing your order.' },{ q: 'How are delivery details managed?', a: 'Delivery arrangements can be confirmed directly with the store owner to match current business procedures.' },{ q: 'What if I need a return or exchange?', a: 'Return and exchange information is managed based on the store owner’s current policy and should be confirmed before purchase.' },{ q: 'How can I get customer support?', a: 'You can reach us through WhatsApp, email or the contact page for product and order support.' }]; return `
+        <section class="page-hero"><div class="page-hero-inner"><span class="eyebrow" style="color: var(--gold);">Need answers?</span><h1>FAQ</h1><p>Helpful answers for shopping, ordering and customer support — all kept flexible for store updates.</p></div></section>
+        <section class="section white"><div class="container faq-grid"><div class="feature-box"><span class="eyebrow">Shopping & products</span><h3>Helpful answers before you buy.</h3><p>Every answer is written to stay editable as the business updates details.</p></div><div class="faq-list">${entries.map((item, index) => `<div class="faq-item ${index === 0 ? 'open' : ''}"><button type="button" class="faq-question"><span>${item.q}</span><span class="faq-sign">${index === 0 ? '−' : '+'}</span></button><div class="faq-answer"><p>${item.a}</p></div></div>`).join('')}</div></div></section>
+      `; }
+      function renderProductPage(productId) { const product = getProductById(productId); const activeGallery = product.gallery || [product.image]; const inWishlist = state.wishlist.includes(product.id); return `
+        <section class="section white"><div class="container detail-layout"><div class="detail-gallery"><div class="thumbs">${activeGallery.map((image, index) => `<div class="thumb ${index === 0 ? 'active' : ''}" data-thumb="${image}" style="background-image:url('${image}')"></div>`).join('')}</div><div class="detail-image" style="background-image:url('${activeGallery[0]}')"></div></div><div class="detail-card"><span class="eyebrow">${product.audience} / ${product.category}</span><h1>${product.name}</h1><div class="detail-price">${formatPrice(product.price)}</div><p class="detail-desc">A premium fashion staple designed for an elevated everyday wardrobe. Minimalistic lines, tailored feel and standout finishing details give this piece a confident statement profile.</p><div class="option-block"><div><strong>Color</strong><div class="swatches"><button type="button" class="swatch active" style="background:#7a1d1d;" aria-label="Burgundy"></button><button type="button" class="swatch" style="background:#d7bfa5;" aria-label="Sand"></button><button type="button" class="swatch" style="background:#061224;" aria-label="Navy"></button></div></div><div><strong>Size</strong><div class="sizes">${['S','M','L','XL'].map(size => `<button type="button" class="size-pill">${size}</button>`).join('')}</div></div></div><div class="qty"><button type="button" data-qty-minus>-</button><input type="number" value="1" min="1" aria-label="Quantity" /><button type="button" data-qty-plus>+</button></div><div class="detail-actions" style="margin-top:20px;"><button type="button" class="btn btn-primary" data-add-cart="${product.id}">Add to Cart</button><button type="button" class="btn btn-secondary">Buy Now</button><button type="button" class="btn btn-outline" data-wishlist="${product.id}">${inWishlist ? 'Saved' : 'Wishlist'}</button></div><div class="meta-list"><div class="meta-item"><span>Product Details</span><strong>Premium finish</strong></div><div class="meta-item"><span>Shipping Information</span><strong>Confirm with store</strong></div><div class="meta-item"><span>Returns Information</span><strong>Confirm with store</strong></div></div></div></div></section>
+        <section class="section ivory"><div class="container"><div class="section-head"><div><span class="eyebrow">Related picks</span><h2>Related Products</h2></div></div><div class="products-grid">${products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4).map(renderProductCard).join('')}</div></div></section>
+      `; }
+      function renderCartPage() { const subtotal = state.cart.reduce((sum, item) => sum + (item.price * item.qty), 0); const total = subtotal; return `
+        <section class="page-hero"><div class="page-hero-inner"><span class="eyebrow" style="color: var(--gold);">Your bag</span><h1>Cart</h1><p>Review your selections before checkout.</p></div></section>
+        <section class="section white"><div class="container cart-grid"><div>${state.cart.length ? state.cart.map(item => `<div class="cart-item" style="margin-bottom:16px;"><div class="cart-thumb" style="background-image:url('${item.image}')"></div><div><h4>${item.name}</h4><p>${item.category} · ${item.color}</p><p>Qty: ${item.qty}</p><div style="font-weight:700; margin-top:6px;">${formatPrice(item.price * item.qty)}</div></div><div class="remove-link" data-remove-cart="${item.id}">Remove</div></div>`).join('') : `<div class="blank-state"><h3>Your cart is empty.</h3><button type="button" class="btn btn-primary nav-link" data-page="shop">Continue Shopping</button></div>`}</div><aside class="summary-box"><h4>Order Summary</h4><div class="totals"><div class="total-row"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div><div class="total-row"><span>Shipping</span><span>${formatPrice(0)}</span></div><div class="total-row"><strong>Total</strong><strong>${formatPrice(total)}</strong></div></div><div style="display:grid; gap:12px; margin-top:18px;"><button type="button" class="btn btn-primary nav-link" data-page="checkout">Checkout</button><button type="button" class="btn btn-outline nav-link" data-page="shop">Continue Shopping</button><a href="https://wa.me/2348139447350?text=Hello%20Rutomok%20Empire%2C%20I%27m%20ready%20to%20checkout%20my%20cart.%20Please%20can%20you%20help%20me%20with%20my%20order%3F" target="_blank" rel="noreferrer" class="btn btn-secondary">WhatsApp Assistance</a></div></aside></div></section>
+      `; }
+      function renderWishlistPage() { const wishlistItems = state.wishlist.map(productId => getProductById(productId)); return `
+        <section class="page-hero"><div class="page-hero-inner"><span class="eyebrow" style="color: var(--gold);">Saved favourites</span><h1>Wishlist</h1><p>Keep your favourite looks close.</p></div></section>
+        <section class="section white"><div class="container">${wishlistItems.length ? `<div class="wishlist-grid">${wishlistItems.map(item => `<article class="product-card"><div class="product-image-wrap"><div class="product-actions"><button type="button" class="tiny-icon" data-wishlist="${item.id}">♥</button></div><div class="product-image" style="background-image:url('${item.image}')"></div></div><div class="product-card-body"><div class="product-name">${item.name}</div><div class="price">${formatPrice(item.price)}</div><div class="product-row"><button type="button" class="small-btn" data-add-cart="${item.id}">Add to Cart</button><button type="button" class="small-btn" data-view-product="${item.id}">View</button></div></div></article>`).join('')}</div>` : `<div class="blank-state"><h3>No favourites saved yet.</h3><button type="button" class="btn btn-primary nav-link" data-page="shop">Browse Products</button></div>`}</div></section>
+      `; }
+      function renderCheckoutPage() { const subtotal = state.cart.reduce((sum, item) => sum + item.qty * item.price, 0); return `
+        <section class="page-hero"><div class="page-hero-inner"><span class="eyebrow" style="color: var(--gold);">Secure ordering</span><h1>Checkout</h1><p>Finalise your order with clear customer and delivery information.</p></div></section>
+        <section class="section white"><div class="container checkout-grid"><div class="faq-grid" style="grid-template-columns:1fr; gap:16px;"><div class="checkout-box"><h4>Customer Information</h4><div class="order-form"><div class="two-col"><input type="text" placeholder="First name" /><input type="text" placeholder="Last name" /></div><input type="email" placeholder="Email address" /><input type="tel" placeholder="Phone number" /></div></div><div class="checkout-box"><h4>Delivery Information</h4><div class="order-form"><input type="text" placeholder="Delivery address" /><div class="two-col"><input type="text" placeholder="City" /><input type="text" placeholder="State" /></div><input type="text" placeholder="Country" /></div></div><div class="checkout-box"><h4>Payment Information</h4><div class="order-form"><select><option>Payment method</option><option>Bank transfer</option><option>Cash on delivery</option><option>Store confirmation</option></select><textarea placeholder="Order notes"></textarea></div></div></div><aside class="summary-box"><h4>Order Summary</h4><div class="totals">${state.cart.length ? state.cart.map(item => `<div class="total-row"><span>${item.name} x ${item.qty}</span><span>${formatPrice(item.qty * item.price)}</span></div>`).join('') : `<div class="total-row"><span>No items selected</span><span>₦0</span></div>`}<div class="total-row"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div></div><div style="margin-top:18px; display:grid; gap:12px;"><button type="button" class="btn btn-primary">Place Order</button><a href="https://wa.me/2348139447350?text=Hello%20Rutomok%20Empire%2C%20I%27m%20ready%20to%20checkout%20my%20order%20and%20need%20help%20with%20confirmation.%20Please%20assist%20me." target="_blank" rel="noreferrer" class="btn btn-secondary">WhatsApp Support</a></div></aside></div></section>
+      `; }
+      function renderPage() {
+        const app = document.getElementById('app');
+        let html = '';
+        switch (state.page) { case 'shop': html = renderShopPage(); break; case 'collections': html = renderCollectionsPage(); break; case 'new-arrivals': html = renderNewArrivalsPage(); break; case 'lookbook': html = renderLookbookPage(); break; case 'about': html = renderAboutPage(); break; case 'contact': html = renderContactPage(); break; case 'faq': html = renderFaqPage(); break; case 'product': html = renderProductPage(state.selectedProductId); break; case 'cart': html = renderCartPage(); break; case 'wishlist': html = renderWishlistPage(); break; case 'checkout': html = renderCheckoutPage(); break; default: html = renderHomePage(); }
+        app.innerHTML = html;
+        setNavState(state.page);
+        updateCounts();
+        bindEvents();
+      }
+      function showToast(message) { const toast = document.createElement('div'); toast.textContent = message; toast.style.position='fixed'; toast.style.right='24px'; toast.style.bottom='90px'; toast.style.zIndex='240'; toast.style.background='rgba(11,11,11,0.92)'; toast.style.color='var(--white)'; toast.style.padding='10px 14px'; toast.style.borderRadius='999px'; toast.style.fontSize='0.7rem'; toast.style.letterSpacing='0.12em'; toast.style.textTransform='uppercase'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1400); }
+      function addToCart(productId, qty = 1) { const product = getProductById(productId); const existing = state.cart.find(item => item.id === productId); if (existing) existing.qty += qty; else state.cart.push({ ...product, qty }); updateCounts(); showToast('Added to cart'); }
+      function toggleWishlist(productId) { if (state.wishlist.includes(productId)) state.wishlist = state.wishlist.filter(id => id !== productId); else state.wishlist.push(productId); renderPage(); }
+      function setPage(pageName, productId = null) { state.page = pageName; if (productId) state.selectedProductId = productId; renderPage(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      function bindEvents() {
+        document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', (event) => { const page = link.getAttribute('data-page'); if (page) { event.preventDefault(); if (['home','shop','collections','new-arrivals','lookbook','about','contact','faq','cart','wishlist','checkout'].includes(page)) setPage(page); } }));
+        document.querySelectorAll('[data-add-cart]').forEach(button => button.addEventListener('click', () => addToCart(button.getAttribute('data-add-cart'))));
+        document.querySelectorAll('[data-wishlist]').forEach(btn => btn.addEventListener('click', () => toggleWishlist(btn.getAttribute('data-wishlist'))));
+        document.querySelectorAll('[data-quick-view]').forEach(btn => btn.addEventListener('click', () => { const id = btn.getAttribute('data-quick-view'); state.recent = [id, ...state.recent.filter(v => v !== id)].slice(0,4); setPage('product', id); }));
+        document.querySelectorAll('[data-view-product]').forEach(btn => btn.addEventListener('click', () => { const id = btn.getAttribute('data-view-product'); state.recent = [id, ...state.recent.filter(v => v !== id)].slice(0,4); setPage('product', id); }));
+        document.querySelectorAll('[data-remove-cart]').forEach(btn => btn.addEventListener('click', () => { const id = btn.getAttribute('data-remove-cart'); state.cart = state.cart.filter(item => item.id !== id); renderPage(); }));
+        document.querySelectorAll('[data-audience]').forEach(button => button.addEventListener('click', () => { state.filters.audience = button.getAttribute('data-audience'); renderPage(); }));
+        document.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => { state.filters.category = button.getAttribute('data-category'); renderPage(); }));
+        const searchInput = document.querySelector('[data-search-input]'); if (searchInput) searchInput.addEventListener('input', (event) => { state.filters.search = event.target.value; renderPage(); });
+        document.querySelectorAll('.faq-question').forEach(button => button.addEventListener('click', () => { const item = button.closest('.faq-item'); item.classList.toggle('open'); const sign = button.querySelector('.faq-sign'); sign.textContent = item.classList.contains('open') ? '−' : '+'; }));
+        document.querySelectorAll('[data-thumb]').forEach(thumb => thumb.addEventListener('click', () => { const mainImage = document.querySelector('.detail-image'); if (mainImage) mainImage.style.backgroundImage = `url('${thumb.getAttribute('data-thumb')}')`; document.querySelectorAll('[data-thumb]').forEach(item => item.classList.toggle('active', item === thumb)); }));
+        document.querySelectorAll('[data-qty-plus]').forEach(button => button.addEventListener('click', () => { const input = button.parentElement.querySelector('input'); input.value = Number(input.value) + 1; }));
+        document.querySelectorAll('[data-qty-minus]').forEach(button => button.addEventListener('click', () => { const input = button.parentElement.querySelector('input'); input.value = Math.max(1, Number(input.value) - 1); }));
+        const newsletterForm = document.getElementById('newsletter-form'); if (newsletterForm) { newsletterForm.addEventListener('submit', (event) => { event.preventDefault(); showToast('Subscribed'); newsletterForm.reset(); }); }
+        const mobileToggle = document.querySelector('.mobile-toggle'); const mobileNav = document.getElementById('mobile-nav'); const mobileBackdrop = document.getElementById('mobile-backdrop'); const closeMobile = document.getElementById('close-mobile-nav'); function setMobile(show) { mobileNav.classList.toggle('open', show); mobileBackdrop.classList.toggle('show', show); }
+        if (mobileToggle) mobileToggle.addEventListener('click', () => setMobile(true)); if (closeMobile) closeMobile.addEventListener('click', () => setMobile(false)); if (mobileBackdrop) mobileBackdrop.addEventListener('click', () => setMobile(false)); document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => setMobile(false)));
+        document.querySelectorAll('[data-search-trigger]').forEach(button => button.addEventListener('click', () => { setPage('shop'); setTimeout(() => { const searchField = document.querySelector('[data-search-input]'); if (searchField) searchField.focus(); }, 50); }));
+        document.querySelectorAll('[data-page="cart"]').forEach(btn => btn.addEventListener('click', () => setPage('cart')));
+        document.querySelectorAll('[data-page="wishlist"]').forEach(btn => btn.addEventListener('click', () => setPage('wishlist')));
+      }
+      renderFooter(); renderPage();
+    </script>
+  </body>
+</html>
